@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "python-django"
+version = "0.1.0"
+description = ""
+authors = ["KYEONGMIN CHO <ggingmin@cloudtype.co.kr>"]
+readme = "README.md"
+packages = [{include = "python_django"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "^5.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
