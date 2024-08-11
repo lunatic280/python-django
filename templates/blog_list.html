@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>blog_list</h1>
+    <a href="add/">작성</a>
+        <ul></ul>
+        {% for blog in blogs %}
+            <li>
+                <h2>{{ blog.title }}</h2>
+                <p>{{ blog.content }}</p>
+                <ul>
+                    {% for comment in blog.comment_set.all %}
+                        <li>{{ comment.content }}</li>
+                    {% empty %}
+                        <li>아직 댓글이 없습니다.</li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+        </ul>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Blog Detail</h1>
+    <h2>{{ blog.title }}</h2>
+    <p>{{ blog.content }}</p>
+    <ul>
+        {% for comment in blog.comment_set.all %}
+            <li>{{ comment.content }}</li>
+        {% empty %}
+            <li>아직 댓글이 없습니다.</li>
+        {% endfor %}
+    </ul>
+    <a href="/blog">돌아가기</a>
+</body>
+</html>
