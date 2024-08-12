@@ -15,6 +15,11 @@
             <li>아직 댓글이 없습니다.</li>
         {% endfor %}
     </ul>
+    <form method="POST">
+        {% csrf_token %}
+        <textarea name="comment"></textarea>
+        <button type="submit">댓글 작성</button>
+    </form>
     <a href="/blog">돌아가기</a>
 </body>
 </html>

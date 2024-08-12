@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from blog.models import Blog
+from blog.models import Blog, Comment
 
 
 def blog_list(request):
@@ -14,6 +14,13 @@ def blog_list(request):
 
 def blog_detail(request, blog_id):
     blog = Blog.objects.get(id=blog_id)
+
+    if request.method == "POST":
+        comment_content = request.POST["comment"]
+        Comment.objects.create(
+            blog=blog,
+            content=comment_content,
+        )
 
     context = {
         "blog": blog,
@@ -32,3 +39,5 @@ def blog_add(request):
         )
         return redirect(f"/blog/{blog.id}/")
     return render(request, "blog_add.html")
+
+

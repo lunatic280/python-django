@@ -11,6 +11,7 @@
         {% for blog in blogs %}
             <li>
                 <h2>{{ blog.title }}</h2>
+                <a href="{{ blog.id }}">이동하기</a>
                 <p>{{ blog.content }}</p>
                 <ul>
                     {% for comment in blog.comment_set.all %}
