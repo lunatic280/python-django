@@ -3,14 +3,16 @@ from blog.models import Blog, Comment
 
 
 def blog_list(request):
-    blogs = Blog.objects.all()
+    if request.user.is_authenticated:
+        blogs = Blog.objects.all()
 
-    context = {
-        "blogs": blogs,
-    }
+        context = {
+            "blogs": blogs,
+        }
 
-    return render(request, "blog_list.html", context)
-
+        return render(request, "blog_list.html", context)
+    else:
+        return redirect("/users/login")
 
 def blog_detail(request, blog_id):
     blog = Blog.objects.get(id=blog_id)
