@@ -1,8 +1,12 @@
 from django.db import models
+from django.utils import timezone
+from django.conf import settings
 
 class Blog(models.Model):
-    title = models.CharField("블로그 제목", max_length=100)
-    content = models.TextField("블로그 내용")
+    title = models.CharField(max_length=20)
+    content = models.TextField("약속 내용")
+    space = models.CharField(max_length=100, default='default_value')
+    meet_time = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return self.title

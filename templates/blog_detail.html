@@ -8,6 +8,9 @@
     <h1>Blog Detail</h1>
     <h2>{{ blog.title }}</h2>
     <p>{{ blog.content }}</p>
+    <p>{{ blog.space }}</p>
+    <p>{{ blog.meet_time }}</p>
+    <button class="create-button"><a href="{% url 'update' blog.id %}">수정</a></button>
     <ul>
         {% for comment in blog.comment_set.all %}
             <li>{{ comment.content }}</li>
@@ -21,5 +24,23 @@
         <button type="submit">댓글 작성</button>
     </form>
     <a href="/blog">돌아가기</a>
+
+    <form id="delete-form" method="post" action="{% url 'delete' blog.id %}">
+        {% csrf_token %}
+        <p>정말로 삭제하시겠습니까? "{{ blog }}"</p>
+        <button class="create-button" type="submit">Delete</button>
+    </form>
+
+    <script>
+        document.getElementById("delete-form").addEventListener("submit", function(event) {
+            event.preventDefault();  // 기본 동작(폼 제출) 막기
+            var confirmed = confirm("정말로 삭제하시겠습니까?");
+
+            if (confirmed) {
+                // 확인 버튼을 눌렀을 때 폼을 제출
+                this.submit();
+            }
+        });
+    </script>
 </body>
 </html>

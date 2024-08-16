@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <div>
+            <label>제목</label>
+            <input name="title" type="text" value="{{ blog.title }}">
+        </div>
+        <div>
+            <label>약속 내용</label>
+            <textarea name="content">{{ blog.content }}</textarea>
+        </div>
+
+    <button type="submit">작성</button>
+
+</body>
+</html>
