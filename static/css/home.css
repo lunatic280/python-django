@@ -506,3 +506,26 @@
 	left:-1.1368683772161603e-13px;
 	top:6.1018595695495605px;
 }
+.blog-container {
+    max-width: 100%; /* 컨테이너가 뷰포트 너비를 넘지 않도록 설정합니다. */
+    overflow-x: auto; /* 내용이 넘칠 경우 가로 스크롤을 허용합니다. */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.blog-item {
+    flex: 1 1 30%; /* 각 블로그 항목이 한 줄에 3개씩 들어가도록 설정 */
+    margin: 10px;
+    box-sizing: border-box; /* 패딩과 보더를 포함하여 크기를 계산 */
+}
+@media (max-width: 1200px) {
+    .blog-item {
+        flex: 1 1 45%; /* 중간 크기의 화면에서는 한 줄에 두 개의 항목을 표시 */
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-item {
+        flex: 1 1 100%; /* 작은 화면에서는 한 줄에 한 개의 항목을 표시 */
+    }
+}

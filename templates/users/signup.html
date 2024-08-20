@@ -1,15 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 <head>
     <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=HYGothic-Extra&display=swap" rel="stylesheet" />
+    <link href="{% static 'css/login.css' %}" rel="stylesheet" />
     <title>Title</title>
 </head>
 <body>
-    <h1>signup</h1>
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">회원가입</button>
-    </form>
+    <div class="v33_69">
+
+
+        <div class="leftblue"></div>
+
+        <div class="v33_85">
+            <div class="v33_86"></div>
+            <div class="v33_87"></div>
+            <div class="v33_88"></div>
+            <div class="v33_89"></div>
+            <div class="v33_90"></div>
+            <div class="v33_91"></div>
+        </div>
+        <div class="v33_92">
+            <div class="v33_93"></div>
+            <div class="v33_94"></div>
+        </div>
+        <div class="v33_95">
+            <div class="v33_96"></div>
+            <div class="v33_97"></div>
+        </div>
+        <div class="v33_98">
+            <div class="v33_99"></div>
+            <div class="v33_100"></div>
+        </div>
+        <div class="v33_101">
+            <div class="v33_102"></div>
+            <div class="v33_103"></div>
+        </div>
+        <div class="v33_110">
+            <div class="v33_111"></div>
+            <div class="v33_112"></div>
+        </div>
+        <div class="v33_116">
+            <div class="v33_117"></div>
+            <div class="v33_118"></div>
+        </div>
+        <div class="v33_213">
+            <div class="v33_214"></div>
+            <div class="v33_215"></div>
+        </div>
+        <div class="v33_216">
+            <div class="v33_217"></div>
+            <div class="v33_218"></div>
+        </div>
+        <div class="v33_219">
+            <div class="v33_220"></div>
+            <div class="v33_221"></div>
+        </div>
+        <div class="v33_222">
+            <div class="v33_223"></div>
+            <div class="v33_224"></div>
+        </div>
+        <span class="v33_128">Meeting room</span>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="v33_127">
+                <span class="v33_129">ID</span>
+                <input  type="text" name="username">
+            </div>
+            <div class="v33_126">
+                <span class="v33_130">PW</span>
+                <input  type="password" name="password1">
+            </div>
+
+
+        <button class="v33_125" type="submit">회원가입</button>
+        </form>
+
+
+
+
+
+        <div class="rocket"></div>
+        <button class="v33_132"><a href="/users/signup">회원가입</a></button>
+
+
+
+    </div>
 </body>
 </html>

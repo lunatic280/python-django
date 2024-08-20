@@ -1,30 +1,29 @@
 <!DOCTYPE html>
 <html lang="ko">
+{% load static %}
 <head>
     <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=HYGothic-Extra&display=swap" rel="stylesheet" />
+    <link href="{% static 'css/input.css' %}" rel="stylesheet" />
     <title>Title</title>
 </head>
 <body>
-    <h1>blog add</h1>
+    <div class=e62_2><span  class="e62_3"></span>
+        <div class="e62_4"></div>
+            <span  class="e63_52">제목</span>
+            <span  class="e63_53">약속내용</span>
+            <span  class="e63_54">약속장소</span>
+            <span  class="e63_55">약속시간</span>
     <form method="POST">
-        {% csrf_token %}
-        <div>
-            <label>제목</label>
-            <input name="title" type="text">
-        </div>
-        <div>
-            <label>약속 내용</label>
-            <textarea name="content"></textarea>
-        </div>
-        <div>
-            <label>약속 장소</label>
-            <input name="space" type="text">
-        </div>
-        <div>
-            <label>약속 시간</label>
-            <input name="meet_time" type="text" placeholder="YYYY-MM-DD HH:MM">
-        </div>
-    <button type="submit">작성</button>
+    {% csrf_token %}
+        <input name="title" type="text" class="e63_78">
+        <textarea name="content" class="e63_79"></textarea>
+        <input name="space" type="text" class="e63_80">
+        <input name="meet_time" type="text" class="e63_81" placeholder="YYYY-MM-DD HH:MM">
+    <button type="submit" class="e63_77">작성</button>
     </form>
+    </div>
+
 </body>
 </html>

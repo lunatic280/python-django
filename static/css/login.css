@@ -437,6 +437,15 @@ body {
   left: 388px;
   border: 7px solid rgba(255,255,255,1);
 }
+.v33_1261 {
+  width: 660px;
+  background: url("../images/index/v33_126.png");
+  opacity: 1;
+  position: absolute;
+  top: 450px;
+  left: 388px;
+  border: 7px solid rgba(255,255,255,1);
+}
 .v33_127 {
   width: 660px;
   background: url("../images/index/v33_127.png");
@@ -488,6 +497,18 @@ body {
   position: absolute;
   top: 335px;
   left: 386px;
+  font-family: HYGothic-Extra;
+  font-weight: Regular;
+  font-size: 59px;
+  opacity: 1;
+  text-align: left;
+}
+.v33_1301 {
+  width: 165px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 400px;
+  left: 383px;
   font-family: HYGothic-Extra;
   font-weight: Regular;
   font-size: 59px;
@@ -590,4 +611,8 @@ button{
   width: 1000px;
   size: auto;
   
+}
+.signup {
+  top: 750px;
+  left: 598px;
 }
