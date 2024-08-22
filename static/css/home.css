@@ -529,3 +529,27 @@
         flex: 1 1 100%; /* 작은 화면에서는 한 줄에 한 개의 항목을 표시 */
     }
 }
+.blog-pagination-container {
+    display: flex;
+    justify-content: space-between; /* 좌우 배치 */
+    align-items: center; /* 중앙 정렬 */
+    margin-bottom: 20px; /* 각 블로그 항목 사이의 간격 */
+}
+
+.pagination-button {
+    color: black;
+    text-decoration: none;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+}
+
+.pagination-button:hover {
+    background-color: #e0e0e0; /* 마우스 오버 시 배경색 변경 */
+}
+
+.blog-content {
+    text-align: center; /* 블로그 콘텐츠 중앙 정렬 */
+    max-width: 70%; /* 콘텐츠의 최대 너비를 설정하여 양쪽 여백 확보 */
+}

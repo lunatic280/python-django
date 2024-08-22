@@ -1,14 +1,18 @@
 from django.shortcuts import render, redirect
 from blog.models import Blog, Comment
 from django.urls import reverse
+from django.core.paginator import Paginator
 
 
 def blog_list(request):
     if request.user.is_authenticated:
+        page = request.GET.get('page', '1')
         blogs = Blog.objects.all()
+        paginator = Paginator(blogs, 1)  # 페이지당 1개씩 보여주기
+        page_obj = paginator.get_page(page)
 
         context = {
-            "blogs": blogs,
+            "blogs": page_obj,
         }
 
         return render(request, "blog_list.html", context)

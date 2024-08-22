@@ -10,19 +10,18 @@
 </head>
 <body>
     <div class="e63_82"></div>
-        <span  class="e63_86"> <a href="/blog">돌아가기</a></span>
+        <span  class="e63_86"> <a href="/blog" style="color: white; text-decoration: none;">돌아가기</a></span>
         <div class="e63_87"></div>
         <div class="e63_93"></div>
-          <button  class="e63_97 create-button"><a href="{% url 'update' blog.id %}">수정</a></button>
+          <button  class="e63_97 create-button"><a href="{% url 'update' blog.id %}" style="color: white; text-decoration: none;">수정</a></button>
           <div  class="e63_96">
               <form id="delete-form" method="post" action="{% url 'delete' blog.id %}">
                   {% csrf_token %}
 
-                  <button class="create-button" type="submit">Delete</button>
+                  <button id="box" class="create-button" type="submit" style="color: white; height: 100px; text-decoration: none; font-size: 40px;">삭제</button>
               </form>
           </div>
-          <span  class="e63_100">{{ blog.title }}</span>
-          <span  class="e63_112">{{ blog.meet_time }}</span>
+
     <div class="e63_110">
         <h2>{{ blog.title }}</h2>
         <p>{{ blog.content }}</p>

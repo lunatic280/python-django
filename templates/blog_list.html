@@ -9,6 +9,11 @@
     <title>Title</title>
 </head>
 <body>
+    <div class="navigation">
+        <a href="/" style="color: black; text-decoration: none;">Home</a>
+        <a href="/about/" style="color: black; text-decoration: none; margin-left: 20px;">About</a>
+        <a href="/contact/" style="color: black; text-decoration: none; margin-left: 20px;">Contact</a>
+    </div>
     <div class=e33_135>
       <div class="e33_137"></div>
       <div class= "rocket">
@@ -19,22 +24,36 @@
 
 
       <div class="leftblue"></div>
-      <div class="e33_193"></div><span  class="e33_194">Meeting List</span><span  class="e33_195"><a href="/users/logout/">로그아웃</a></span>
+      <div class="e33_193"></div><span  class="e33_194">Meeting List</span><span  class="e33_195"><a href="/users/logout/" style="color: white; text-decoration: none;">로그아웃</a></span>
       <div class="e33_196"></div>
       <div class="e33_197">
-          {% for blog in blogs %}
-          <div class="blog-container">
-              <div class="blog-item">
-                  <h2>{{ blog.title }}</h2>
-                  <a href="{{ blog.id }}">이동하기</a>
-                  <p>{{ blog.content }}</p>
-                  <p>{{ blog.space }}</p>
-                  <p>{{ blog.meet_time }}</p>
-              </div>
-          </div>
+    {% for blog in blogs %}
+    <div class="blog-pagination-container">
+        <!-- Previous 버튼을 왼쪽에 배치 -->
+        <div class="pagination-left">
+            {% if blogs.has_previous %}
+                <a href="?page={{ blogs.previous_page_number }}" class="pagination-button">Previous</a>
+            {% endif %}
+        </div>
 
-          {% endfor %}
-      </div><span  class="e33_198"><a href="add/">작성</a></span>
+        <!-- 블로그 콘텐츠를 중앙에 배치 -->
+        <div class="blog-content">
+            <h2>{{ blog.title }}</h2>
+            <a href="/blog/{{ blog.id }}" style="color: black; text-decoration: none;">이동하기</a>
+            <p>{{ blog.content }}</p>
+            <p>{{ blog.space }}</p>
+            <p>{{ blog.meet_time }}</p>
+        </div>
+
+        <!-- Next 버튼을 오른쪽에 배치 -->
+        <div class="pagination-right">
+            {% if blogs.has_next %}
+                <a href="?page={{ blogs.next_page_number }}" class="pagination-button">Next</a>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+    </div><span  class="e33_198"><a href="add/" style="color: white; text-decoration: none;">작성</a></span>
       <div class="e33_202"></div>
       <div class=e33_206>
         <!-- heart -->
